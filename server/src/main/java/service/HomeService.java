@@ -194,7 +194,7 @@ public class HomeService {
     for (int nr : list) {
       query.append(nr).append(" OR h.id = ");
     }
-    return query.toString().substring(0, query.length() - 11);
+    return query.substring(0, query.length() - 11);
   }
 
 
