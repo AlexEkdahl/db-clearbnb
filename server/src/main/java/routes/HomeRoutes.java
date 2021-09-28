@@ -53,7 +53,7 @@ public class HomeRoutes {
         List<HomeView> homes = homeService.getAll(filters);
         res.json(homes);
       } catch (Exception e) {
-        e.printStackTrace();
+        System.out.println(e);
         res.status(500).json("internal error");
       }
     });

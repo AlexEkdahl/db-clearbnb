@@ -18,12 +18,6 @@ public class Message {
     return id;
   }
 
-  public Message(String id, String uuid, String msg) {
-    this.id = id;
-    this.uuid = uuid;
-    this.msg = msg;
-  }
-
   public void setId(String id) {
     this.id = id;
   }

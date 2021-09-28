@@ -23,7 +23,7 @@ import utility.AmenityEnumConverter;
 public class Amenity {
 
     public enum AmenityEnum {
-        WIFI, KITCHEN, PARKING, BATH, NULL
+        WIFI, KITCHEN, PARKING, BATH
     }
 
     @Id

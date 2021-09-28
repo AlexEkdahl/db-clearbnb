@@ -18,19 +18,18 @@ public class AmenityEnumConverter implements AttributeConverter<AmenityEnum, Str
 
     @Override
     public AmenityEnum convertToEntityAttribute(String s) {
-
-        if(s == null){
-            return AmenityEnum.NULL;
+        switch (s) {
+            case "WIFI":
+                return AmenityEnum.WIFI;
+            case "KITCHEN":
+                return AmenityEnum.KITCHEN;
+            case "PARKING":
+                return AmenityEnum.PARKING;
+            case "BATH":
+                return AmenityEnum.BATH;
+            default:
+                return null;
         }
-
-        return switch (s) {
-            case "WIFI" -> AmenityEnum.WIFI;
-            case "KITCHEN" -> AmenityEnum.KITCHEN;
-            case "PARKING" -> AmenityEnum.PARKING;
-            case "BATH" -> AmenityEnum.BATH;
-            default -> null;
-        };
-
     }
 
     public List<Amenity> getAmenitiesAsAmenityList(List<String> amenityStrings, Home home){

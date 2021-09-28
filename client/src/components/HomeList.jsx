@@ -27,7 +27,6 @@ const HomeList = () => {
       query += input ? `&search=${input}` : ''
       console.log('query :>> ', query)
       const homeList = await getHomeList(query)
-      console.log(`homeList`, homeList)
       setHomes(homeList)
     }
     const timer = setTimeout(() => {
@@ -105,6 +104,16 @@ const HomeList = () => {
           type='checkbox'
           value='WIFI'
           onChange={(e) => {
+            Array.from(
+              document.querySelectorAll('input[type=checkbox]')
+            ).forEach((el) => {
+              if (e.target !== el) {
+                el.checked = false
+                setBath(false)
+                setKitchen(false)
+                setParking(false)
+              }
+            })
             if (e.target.checked) {
               setWifi(true)
             } else {
@@ -116,6 +125,16 @@ const HomeList = () => {
           type='checkbox'
           value='KITCHEN'
           onChange={(e) => {
+            Array.from(
+              document.querySelectorAll('input[type=checkbox]')
+            ).forEach((el) => {
+              if (e.target !== el) {
+                el.checked = false
+                setBath(false)
+                setWifi(false)
+                setParking(false)
+              }
+            })
             if (e.target.checked) {
               setKitchen(true)
             } else {
@@ -127,6 +146,16 @@ const HomeList = () => {
           type='checkbox'
           value='BATH'
           onChange={(e) => {
+            Array.from(
+              document.querySelectorAll('input[type=checkbox]')
+            ).forEach((el) => {
+              if (e.target !== el) {
+                el.checked = false
+                setWifi(false)
+                setKitchen(false)
+                setParking(false)
+              }
+            })
             if (e.target.checked) {
               setBath(true)
             } else {
@@ -138,6 +167,16 @@ const HomeList = () => {
           type='checkbox'
           value='PARKING'
           onChange={(e) => {
+            Array.from(
+              document.querySelectorAll('input[type=checkbox]')
+            ).forEach((el) => {
+              if (e.target !== el) {
+                el.checked = false
+                setBath(false)
+                setKitchen(false)
+                setWifi(false)
+              }
+            })
             if (e.target.checked) {
               setParking(true)
             } else {

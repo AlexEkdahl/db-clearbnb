@@ -1,1 +1,3 @@
-export default () => new WebSocket('ws://localhost:4000/chat')
+const socket = new WebSocket('ws://localhost:4000/chat')
+
+export default socket
